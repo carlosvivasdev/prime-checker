@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Verificar Número Primo</h1>
+  <form (submit)="onSubmit()">
+    <div>
+      <label for="number">Número:</label>
+      <input type="number" [(ngModel)]="number" name="number" required/>
+    </div>
+    <button type="submit">Verificar</button>
+    <button type="button" (click)="clear()">Limpiar</button>
+    <button routerLink="/records">Ver Registros de la BD</button>
+  </form>
+
+  <div class="result" *ngIf="result !== null">
+    <h3>Resultado:</h3>
+    <p *ngIf="result.isPrime">El número {{ result.number }} es primo.</p>
+    <p *ngIf="!result.isPrime">El número {{ result.number }} no es primo.</p>
+  </div>
+
+</div>
